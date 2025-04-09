@@ -13,15 +13,6 @@ const page = () => {
             </div>
             <div className='flex flex-wrap gap-3'>
             <MagicCard />
-            <MagicCard />
-            <MagicCard />
-            <MagicCard />
-            <MagicCard />
-            <MagicCard />
-            <MagicCard />
-            <MagicCard />
-            <MagicCard />
-            <MagicCard />
             </div>
         </div>
     )
