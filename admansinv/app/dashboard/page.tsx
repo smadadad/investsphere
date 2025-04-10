@@ -12,7 +12,7 @@ export default function Dashboard() {
   const [transactions, setTransactions] = useState([]);
 
   const USER_REGISTRY_ADDRESS = "0x30473df72d8D0E2B7c320Be68922B46b58dc931b";
-  const INVESTMENT_ADDRESS = "0x6585eD4A59fc1d9866F720a38F7d8967aaAF4351";
+  const INVESTMENT_ADDRESS = "0x4961C6c040D0F99f177bCCeAF05Cf3209701423C";
   const USER_REGISTRY_ABI = [
     "function users(address) external view returns (address userAddress, string username, uint256 signupDate, bool isRegistered)",
   ];

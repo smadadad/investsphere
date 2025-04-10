@@ -25,7 +25,7 @@ const PaymentPage = () => {
         setEthPrice(data.ethereum.usd);
       } catch (error) {
         console.error('Failed to fetch ETH price:', error);
-        setEthPrice(3000); // Fallback
+        setEthPrice(3000);
       }
     };
     fetchEthPrice();
@@ -65,7 +65,7 @@ const PaymentPage = () => {
       case 'money market': return 0;
       case 'equity': return 1;
       case 'bonds': return 2;
-      default: return 0;
+      default: return 0; // Default to MoneyMarket
     }
   };
 
@@ -87,6 +87,11 @@ const PaymentPage = () => {
         const contract = new ethers.Contract(contractAddress, contractABI, signer);
         const investmentType = getInvestmentType(investmentData.name);
         const weiAmount = ethers.parseEther(ethAmount.toString());
+
+        // Debug logging
+        console.log('Investment Name:', investmentData.name);
+        console.log('Mapped Investment Type:', investmentType);
+
         const tx = await contract.subscribe(investmentType, { value: weiAmount });
         const receipt = await tx.wait();
         setTxHash(receipt.hash);
